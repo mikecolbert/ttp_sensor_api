@@ -82,3 +82,15 @@ curl -X POST http://localhost:5004/api/v1/temperatures \
 curl http://localhost:5004/api/v1/temperatures/recent
 curl http://localhost:5004/api/v1/temperatures/latest
 ```
+
+---
+
+## TODO
+
+[ ] Firmware (`final.ino`) uses `client.setInsecure()`, skipping TLS
+certificate validation on its connection to this API. Now that the
+connection carries a real secret (`X-API-Key`) on every request, an
+unvalidated TLS connection means that key could be exposed to a
+man-in-the-middle. Fix is to pin the Let's Encrypt root CA on the
+device via `setCACert()` - more involved since the cert rotates on
+Let's Encrypt's renewal schedule.
