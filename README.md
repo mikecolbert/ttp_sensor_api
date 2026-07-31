@@ -73,14 +73,14 @@ healthcheck once containerized.
 
 ```bash
 # Write a reading
-curl -X POST http://localhost:5004/api/v1/temperatures \
+curl -s -w "\nhttp status: %{http_code}\n" -X POST https://thetemperatureproject.org/api/v1/temperatures \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: <your local API_KEY>" \
+  -H "X-API-Key: asldi0q3034kmf3cpi8334d" \
   -d '{"sensor_id":"0","temperature_f":72.3,"humidity":45.2,"pressure":1013.2,"read_time":"2026-07-31 16:23:45"}'
 
 # Read it back
-curl http://localhost:5004/api/v1/temperatures/recent
-curl http://localhost:5004/api/v1/temperatures/latest
+curl -s https://thetemperatureproject.org/api/v1/temperatures/recent
+curl -s https://thetemperatureproject.org/api/v1/temperatures/latest
 ```
 
 ---
