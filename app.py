@@ -12,6 +12,11 @@ load_dotenv()
 
 app = flask.Flask(__name__)
 
+# Runs on import, not just under `python app.py` - Granian imports this
+# module directly under WSGI and never executes __main__, so init_db()
+# has to happen here to run in production too.
+db.init_db()
+
 API_KEY = os.environ.get("API_KEY", "")
 
 # Sanity bounds for a BME280 - catches sensor glitches (e.g. a bad I2C
@@ -88,5 +93,4 @@ def latest_reading():
 
 
 if __name__ == "__main__":
-    db.init_db()
     app.run(host="0.0.0.0", port=5004, debug=True)
