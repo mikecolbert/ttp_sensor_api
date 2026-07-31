@@ -1,0 +1,40 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs and environments
+*.log
+.env
+*.env
+
+# SQLite data files (local dev database)
+*.db
+*.db-wal
+*.db-shm
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python egg files
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+
+# MyPy and Bandit
+.mypy_cache/
+.bandit/
