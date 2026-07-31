@@ -4,8 +4,8 @@ Thumbs.db
 
 # Logs and environments
 *.log
-.env
-*.env
+# .env
+# *.env
 
 # SQLite data files (local dev database)
 *.db
