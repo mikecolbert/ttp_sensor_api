@@ -75,7 +75,7 @@ healthcheck once containerized.
 # Write a reading
 curl -s -w "\nhttp status: %{http_code}\n" -X POST https://thetemperatureproject.org/api/v1/temperatures \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: asldi0q3034kmf3cpi8334d" \
+  -H "X-API-Key: <your api key here> " \
   -d '{"sensor_id":"99","temperature_f":72.3,"humidity":45.2,"pressure":1013.2,"read_time":"2026-07-31 16:23:45"}'
 
 # Read it back
